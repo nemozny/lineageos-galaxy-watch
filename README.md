@@ -3,6 +3,8 @@ Enable Galaxy Watch on LineageOS with Samsung Galaxy S10
 
 If you attempt to install the Galaxy Wear app from the App Store, it will likely exit due to LineageOS detection. This OS check appears to be more lenient on non-Samsung phones. The goal is to install a Magisk module to pass this OS check.
 
+Github repo [lineageos-galaxy-watch](https://github.com/nemozny/lineageos-galaxy-watch) for any issues or comments.
+
 &nbsp;
 
 ## Prerequisites
