@@ -25,7 +25,11 @@ Yes.
 - You have now the Magisk installed to your phone. Running the app should finish the installation (as you can see on the video), however in my case the app just somehow flashed and closed. Nothing happened.
 - If your Magisk crashed like mine, download the Magisk apk again to your phone and run the apk as you would normally install any application. However since it installed some root files during the earlier Recovery step, it will now just finish the installation properly.
 - I was following a different guide and enabled Zygisk in Magisk settings and rebooted my phone. But I don't think you actually need to do this step.
-- Now download [GoogleSpoofForWear.zip from xdaforums](https://xdaforums.com/t/magisk-module-use-galaxy-wearable-app-with-any-custom-rom.4459715/) to your phone and load it in Magisk - Modules. Reboot.
+
+&nbsp;
+## Magisk module
+- Now download [GoogleSpoofForWear.zip from xdaforums](https://xdaforums.com/t/magisk-module-use-galaxy-wearable-app-with-any-custom-rom.4459715/) to your phone and load it in Magisk - Modules.
+- Reboot.
 
 &nbsp;
 ## Samsung Wear
@@ -44,7 +48,11 @@ However during the Wear crash, I noticed there was a "missing permissions" notif
 
 You need to go to Android settings - Apps - Galaxy Watch5 Manager, don't go to Permissions! Tap three dots in the top right corner and select "Allow restricted permissions". Then you can allow notifications.
 
-Now you need to finish the pairing.
+&nbsp;
+## Done
+Now you can finish the pairing and setup.
+
+Good job!
 
 &nbsp;
 ## References
