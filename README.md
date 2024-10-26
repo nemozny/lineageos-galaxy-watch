@@ -1,71 +1,109 @@
 # lineageos-galaxy-watch
-Galaxy Watch on LineageOS with Samsung Galaxy S10
+Enable Galaxy Watch on LineageOS with Samsung Galaxy S10
 
-If you try and install Galaxy Wear app from the App store, it will exit, because it can identify running LineageOS. From what I have read, this OS check is more lenient on non-Samsung phones.
-The goal is to install one Magisk module that will enable you to run Galaxy Wear on your Samsung S10 with LineageOS.
-
-&nbsp;
-## Prerequisite
-You are running the latest LineageOS on your phone. For me it is one day old LineageOS build. I am updating LineageOS weekly with OTA.
-You have your PC that you used for LineageOS installation, with all the drivers and ADB working. If not, then follow the official guide.
-You did NOT install Samsung Wear yet.
+If you attempt to install the Galaxy Wear app from the App Store, it will likely exit due to LineageOS detection. This OS check appears to be more lenient on non-Samsung phones. The goal is to install a Magisk module to pass this OS check.
 
 &nbsp;
-## Magisk
-(Following [this Youtube guide](https://www.youtube.com/watch?v=8o5YILpoIvs))
 
-- Download the latest [Magisk](https://github.com/topjohnwu/Magisk/releases/) apk to your PC. Do not install Magisk to your phone!
-- Reboot your phone to Recovery - hold your power button and select "Reboot" - "Recovery". Then in Recovery select "Apply update" - "Apply from ADB".
-- On your PC navigate to folder, where have you downloaded the Magisk apk.
-
-- `adb sideload Magisk.apk` or whatever is your apk file name.
-- "Signature verification failed. Install anyway?" 
-Yes.
-- Reboot.
-- You have now the Magisk installed to your phone. Running the app should finish the installation (as you can see on the video), however in my case the app just somehow flashed and closed. Nothing happened.
-- If your Magisk crashed like mine, download the Magisk apk again to your phone and run the apk as you would normally install any application. However since it installed some root files during the earlier Recovery step, it will now just finish the installation properly.
-- I was following a different guide and enabled Zygisk in Magisk settings and rebooted my phone. But I don't think you actually need to do this step.
+## Prerequisites
+1. Ensure you are running the latest LineageOS on your phone. In this example, it is a one-day-old build, updated weekly via OTA.
+2. LineageOS version 21-20241025-nightly-beyondlte
+3. Have your PC ready with all required drivers and ADB set up, used initially for the LineageOS installation. Follow the official guide if not already set.
+4. Do NOT install Samsung Wear app yet.
 
 &nbsp;
-## Magisk module
-- Now download [GoogleSpoofForWear.zip from xdaforums](https://xdaforums.com/t/magisk-module-use-galaxy-wearable-app-with-any-custom-rom.4459715/) to your phone and load it in Magisk - Modules.
-- Reboot.
+## Magisk Installation
+
+Follow this [YouTube guide](https://www.youtube.com/watch?v=8o5YILpoIvs).
+
+1. **Download Magisk:**  
+    - Go to the [Magisk releases page](https://github.com/topjohnwu/Magisk/releases/) and download the latest APK to your PC. Do not install it on your phone.
+
+2. **Reboot to Recovery:**  
+    - Hold the power button on your phone, select "Reboot," then "Recovery."
+    - In the Recovery mode, select "Apply update" followed by "Apply from ADB."
+
+3. **Install Magisk via ADB:**  
+    - On your PC, navigate to the folder where you downloaded the Magisk APK.
+    - Use the command:
+      ```shell
+      adb sideload Magisk.apk
+      ```
+      (Replace `Magisk.apk` with the actual filename if different).
+
+4. **Handle Signature Verification:**  
+    - When prompted with "Signature verification failed. Install anyway?" select Yes.
+
+5. **Reboot:**  
+    - Restart your phone. Open the Magisk app to complete the installation. If the app crashes (unlike in the YT guide), download the Magisk APK again directly to your phone and install it normally. The initial Recovery step installs essential root files, so the process will complete successfully upon this second installation.
+
+6. **(Optional) Zygisk Enablement:**  
+    - I have followed a different guide, which required enabling Zygisk in Magisk settings and rebooting. I am adding this step to keep note of it, but it should be unnecessary.
 
 &nbsp;
-## Samsung Wear
-Now install Samsung Wear and start setting up your Samsung Watch.
-However the process in my case always crashed.
-- Pairing
-- Confirm code on your phone and watch
-- Agree to Samsung terms + send diagnostic data + automatic updates
-- Now the app always crashed and the process restarted infinitely.
+
+## Install Magisk Module
+
+1. **Download Module:**  
+    - Obtain the [GoogleSpoofForWear.zip](https://xdaforums.com/t/magisk-module-use-galaxy-wearable-app-with-any-custom-rom.4459715/) module from the XDA forums to your phone.
+
+2. **Load Module in Magisk:**  
+    - Open the Magisk app, go to Modules, and load the downloaded ZIP file.
+    - Reboot your phone.
+
+&nbsp;
+## Install Samsung Wear
+
+1. **Download and Install:**  
+    - Install the Samsung Wear app and start the setup for your Samsung Watch.
+
+2. **Pairing Process:**  
+    - Perform the following steps:
+        - Pair your Watch with the phone.
+        - Confirm the code on both devices.
+        - Agree to Samsung terms, including sending diagnostic data and enabling automatic updates.
+
+3. **Application Crash:**  
+    - If the app crashes (repeatedly):
+        - Follow with the next step **Fix Galaxy Watch5 Manager Permissions**.
 
 &nbsp;
 ## Fix Galaxy Watch5 Manager permissions
-I was suspicious of permissions, so I granted everything to "Galaxy Wearable" and "Galaxy Watch5 Manager". I did not help.
+I was suspicious of permissions, so I granted everything to "Galaxy Wearable" and "Galaxy Watch5 Manager". I did not help with the crash.
 
 However during the Wear crash, I noticed there was a "missing permissions" notification. I tapped it and it opened a different Android dialog saying "This setting can't be changed unless you allow restricted settings" for Watch5 Manager.
 
-You need to go to Android settings - Apps - Galaxy Watch5 Manager, don't go to Permissions! Tap three dots in the top right corner and select "Allow restricted permissions". Then you can allow notifications.
-
+2. **Adjust Settings:**  
+    - Go to Android settings: 
+      ```
+      Settings > Apps > Galaxy Watch5 Manager
+      ```
+    - Do not open "Permissions"!
+    - Tap the three dots in the top right corner and select "Allow restricted settings."
+    - Allow notifications.
+  
 &nbsp;
-## Done
-Now you can finish the pairing and setup.
+
+## Final Steps
+
+**Complete Setup:**  
+- Finish pairing and setup without crashes.
 
 Good job!
 
 &nbsp;
-## References
-https://www.youtube.com/watch?v=8o5YILpoIvs
 
-https://xdaforums.com/t/magisk-module-use-galaxy-wearable-app-with-any-custom-rom.4459715/
+## References
+
+- YouTube Guide: https://www.youtube.com/watch?v=8o5YILpoIvs
+- XDA Forums Magisk Module: https://xdaforums.com/t/magisk-module-use-galaxy-wearable-app-with-any-custom-rom.4459715/
 
 &nbsp;
+
 ## Credits
-to /u/lfikhl for giving me info about the Magisk module.
 
-[victoriam8a](https://xdaforums.com/m/victoriam8a.12171217/) for the Google Spoof for Wear module,
+- /u/lfikhl for information on the Magisk module.
+- [victoriam8a](https://xdaforums.com/m/victoriam8a.12171217/) for the GoogleSpoofforWear module.
+- The [Magisk community](https://github.com/topjohnwu/Magisk).
 
-and of course the [Magisk crowd](https://github.com/topjohnwu/Magisk).
-
-You too, Samsung.
+Special thanks to Samsung.
