@@ -16,6 +16,8 @@ Github repo [lineageos-galaxy-watch](https://github.com/nemozny/lineageos-galaxy
 &nbsp;
 ## Magisk Installation
 
+Or [Lygisk](https://github.com/programminghoch10/Lygisk).
+
 Follow this [YouTube guide](https://www.youtube.com/watch?v=8o5YILpoIvs).
 
 1. **Download Magisk:**  
