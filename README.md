@@ -1,7 +1,7 @@
 # lineageos-galaxy-watch
 Enable Galaxy Watch on LineageOS with Samsung Galaxy S10
 
-If you attempt to install the Galaxy Wear app from the App Store, it will likely exit due to LineageOS detection. This OS check appears to be more lenient on non-Samsung phones. The goal is to install a Magisk module to pass this OS check.
+If you attempt to install the Galaxy Wear app from the App Store, it will likely exit due to LineageOS detection. This OS check appears to be more lenient on non-Samsung phones. The goal is to install a Magisk/Lygisk module to pass this OS check.
 
 Github repo [lineageos-galaxy-watch](https://github.com/nemozny/lineageos-galaxy-watch) for any issues or comments.
 
@@ -14,45 +14,54 @@ Github repo [lineageos-galaxy-watch](https://github.com/nemozny/lineageos-galaxy
 4. Do NOT install Samsung Wear app yet.
 
 &nbsp;
-## Magisk Installation
+## Lygisk Installation
 
-Or [Lygisk](https://github.com/programminghoch10/Lygisk).
+[Lygisk repo](https://github.com/programminghoch10/Lygisk)
 
-Follow this [YouTube guide](https://www.youtube.com/watch?v=8o5YILpoIvs).
+_**Do not install Magisk, it will NOT survive the first OTA update.**_
 
-1. **Download Magisk:**  
-    - Go to the [Magisk releases page](https://github.com/topjohnwu/Magisk/releases/) and download the latest APK to your PC. Do not install it on your phone.
+&nbsp;
+
+Follow the official [Lygisk Installation guide](https://github.com/programminghoch10/Lygisk?tab=readme-ov-file#installation):
+
+1. **Download Lygisk:**  
+    - Download the latest APK to your PC. Do not install it on your phone.
+  
+2. **Rename the APK to ZIP**
+   - Change the file extension from APK to ZIP.
 
 2. **Reboot to Recovery:**  
     - Hold the power button on your phone, select "Reboot," then "Recovery."
     - In the Recovery mode, select "Apply update" followed by "Apply from ADB."
 
 3. **Install Magisk via ADB:**  
-    - On your PC, navigate to the folder where you downloaded the Magisk APK.
+    - On your PC, navigate to the folder where you downloaded the Magisk installation file.
     - Use the command:
       ```shell
-      adb sideload Magisk.apk
+      adb sideload app-release.zip
       ```
-      (Replace `Magisk.apk` with the actual filename if different).
+      (Replace `app-release.zip` with the actual filename if different).
 
 4. **Handle Signature Verification:**  
     - When prompted with "Signature verification failed. Install anyway?" select Yes.
 
 5. **Reboot:**  
-    - Restart your phone. Open the Magisk app to complete the installation. If the app crashes (unlike in the YT guide), download the Magisk APK again directly to your phone and install it normally. The initial Recovery step installs essential root files, so the process will complete successfully upon this second installation.
-
-6. **(Optional) Zygisk Enablement:**  
-    - I have followed a different guide, which required enabling Zygisk in Magisk settings and rebooting. I am adding this step to keep note of it, but it should be unnecessary.
+    - Restart your phone. Open the Lygisk app to complete the installation.
+  
+6. **App Requires Additional Setup**
+   - Hit OK
+   - "Direct install", let's go!
+   - another reboot
 
 &nbsp;
 
-## Install Magisk Module
+## Install Lygisk Module
 
 1. **Download Module:**  
     - Obtain the [GoogleSpoofForWear.zip](https://xdaforums.com/t/magisk-module-use-galaxy-wearable-app-with-any-custom-rom.4459715/) module from the XDA forums to your phone.
 
-2. **Load Module in Magisk:**  
-    - Open the Magisk app, go to Modules, and load the downloaded ZIP file.
+2. **Load Module in Lygisk:**  
+    - Open the Lygisk app, go to Modules, and load the downloaded ZIP file.
     - Reboot your phone.
 
 &nbsp;
