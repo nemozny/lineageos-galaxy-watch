@@ -115,8 +115,9 @@ Good job!
 
 ## Credits
 
-- Reddit u/lfikhl for information on the Magisk module.
+- Reddit u/lfikhl for information on Magisk module and Lygisk.
 - [victoriam8a](https://xdaforums.com/m/victoriam8a.12171217/) for the GoogleSpoofforWear module.
 - The [Magisk community](https://github.com/topjohnwu/Magisk).
+- The [Lygisk community](https://github.com/programminghoch10/Lygisk)
 
 Special thanks to Samsung.
