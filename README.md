@@ -8,15 +8,15 @@ Github repo [lineageos-galaxy-watch](https://github.com/nemozny/lineageos-galaxy
 &nbsp;
 
 ## Prerequisites
-1. Ensure you are running the latest LineageOS/crDroid on your phone. In this example, it is a one-day-old build, updated weekly via OTA.
-2. I have switched to crDroidAndroid-15.0-20250416-beyond1lte-v11.4
-3. Have your PC ready with all required drivers and ADB set up, used initially for the LineageOS installation. Follow the official guide if not already set.
+1. Ensure you are running the latest LineageOS/crDroid on your phone. In the first version of this guide I used one day old LineageOS build, updated weekly via OTA. Later crDroid updated monthly.
+2. I have switched from LineageOS to crDroidAndroid-15.0-20250416-beyond1lte-v11.4 (originally written in April 2025, but still rocking in Nov 2025).
+3. Have your PC ready with all required drivers and ADB set up, used initially for the LineageOS installation. Follow the official guide if not already set. For instance for Galaxy S10 I used [this excellent guide](https://wiki.lineageos.org/devices/beyond1lte/install/) several times.
 4. Do NOT install Samsung Wear app yet.
 
 ## Side note
 Transferring my Watch to a different OS/phone never worked. For instance after wiping out my phone. I always had to perform Watch reset. Which is not a big problem, if you have backed up your Watch settings using Samsung Smart Switch. During Watch transfer it just asks you to sign in with your Google account and restores majority of your Watch settings and apps. The downside is that you need to grant Smart Switch pretty much full access to your phone.
 
-Make sure you have an existing backup in Settings - Account and backup on your Watch or Samsung Wear! 
+Make sure you have an existing backup on your Watch in Settings - "Account and backup", or same location on your phone in Galaxy Wearable app! The backup looks to be created automatically overnight, I don't see a way to trigger it manually.
 
 &nbsp;
 ## Lygisk Installation
@@ -39,8 +39,8 @@ Follow the official [Lygisk Installation guide](https://github.com/programmingho
     - Hold the power button on your phone, select "Reboot," then "Recovery."
     - In the Recovery mode, select "Apply update" followed by "Apply from ADB."
 
-3. **Install Magisk via ADB:**  
-    - On your PC, navigate to the folder where you downloaded the Magisk installation file.
+3. **Install Lygisk via ADB:**  
+    - On your PC, navigate to the folder where you downloaded the Lygisk installation file.
     - Use the command:
       ```shell
       adb sideload app-release.zip
@@ -66,14 +66,14 @@ Follow the official [Lygisk Installation guide](https://github.com/programmingho
 ## Install Lygisk Module
 
 1. **Download Module:**  
-    - Obtain the [GoogleSpoofForWear.zip](https://xdaforums.com/t/magisk-module-use-galaxy-wearable-app-with-any-custom-rom.4459715/) module from the XDA forums to your phone.
+    - Obtain the [GoogleSpoofForWear.zip](https://xdaforums.com/t/magisk-module-use-galaxy-wearable-app-with-any-custom-rom.4459715/) module from the XDA forums to your phone. I have replicated it in this repo for redundacy.
 
 2. **Load Module in Lygisk:**  
     - Open the Lygisk app, go to Modules, and load the downloaded ZIP file.
     - Reboot your phone.
 
 3. **crDroid**
-   - There looks to be some additional security on crDroid/Android 15, so I was unable to select the module from the phone Download directory in Lygisk. I had to move the downloaded file to Documents and then I was able to select and install it.
+   - There looks to be some additional security on crDroid/Android 15, as the "Download" directory looked to be unprivileged or protected and I was unable to select the file in Lygisk. I had to move the downloaded file to "Documents" and then I was able to select and install it.
    
 
 &nbsp;
@@ -86,7 +86,7 @@ Follow the official [Lygisk Installation guide](https://github.com/programmingho
     - Perform the following steps:
         - Pair your Watch with the phone.
         - Confirm the code on both devices.
-        - Agree to Samsung terms, including sending diagnostic data and enabling automatic updates.
+        - Agree to Samsung terms, including sending diagnostic data and enabling automatic updates (I wonder why did I write diagnostic data and updates here back then? Need to check without.).
 
 3. **Application Crash:**  
     - If the app crashes (repeatedly):
@@ -98,6 +98,7 @@ Follow the official [Lygisk Installation guide](https://github.com/programmingho
 I was suspicious of permissions, so I granted everything to "Galaxy Wearable" and "Galaxy Watch5 Manager". I did not help with the crash.
 
 However during the Wear crash, I noticed there was a "missing permissions" notification. I tapped it and it opened a different Android dialog saying "This setting can't be changed unless you allow restricted settings" for Watch5 Manager.
+Problem was, sometimes the notification does not show.
 
 2. **Adjust Settings:**  
     - Go to Android settings: 
